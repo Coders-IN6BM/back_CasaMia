@@ -7,8 +7,14 @@ import { dbConnection } from "./mongo.js"
 import apiLimiter from "../src/middlewares/validar-cant-peticiones.js"
 import authRoutes from "../src/auth/auth.routes.js"
 import userRoutes from "../src/user/user.routes.js"
+import hotelRoutes from "../src/hotel/hotel.routes.js"
+import roomRoutes from "../src/room/room.routes.js"
+import reservationRoutes from "../src/reservation/reservation.routes.js"
 import { createDefaultUsers } from "./createDefaultUsers.js"
 import { createDefaultServices } from "./createDefaultServices.js"
+import { swaggerDocs } from "./swagger.js"; 
+
+const app = express();
 
 const middlewares = (app) => {
     app.use(express.urlencoded({ extended: false }))
@@ -21,6 +27,9 @@ const middlewares = (app) => {
 
 const routes = (app) => {
     app.use("/casaMiaManagement/v1/auth", authRoutes);
+    app.use("/casaMiaManagement/v1/hotel", hotelRoutes);
+    app.use("/casaMiaManagement/v1/room", roomRoutes);
+    app.use("/casaMiaManagement/v1/reservation", reservationRoutes);
     app.use("/casaMiaManagement/v1/user", userRoutes);
 }
 
