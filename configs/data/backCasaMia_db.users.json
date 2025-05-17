@@ -1,0 +1,56 @@
+[{
+  "_id": {
+    "$oid": "68273ca7260f755e33080ef9"
+  },
+  "name": "Emilio",
+  "surname": "Lux",
+  "username": "KernelAdmin",
+  "email": "admin@example.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$E89+9ysfMrmgBKAE8d9tPg$cr68GqXYaBevzC08B1wFL7mvTxG8O198ibGuNSEXhI0",
+  "profilePicture": null,
+  "phone": "12345678",
+  "role": "ADMIN_ROLE",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "68273ca7260f755e33080efc"
+  },
+  "name": "Laura",
+  "surname": "Hernández",
+  "username": "HotelQueen",
+  "email": "hoteladmin@example.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$0N8ICHSyf2vdb1+hP07I9g$jXEG5pxsks8kdPcfgZJPTnC1MfYrQqI2ejYrJTO5pFY",
+  "profilePicture": null,
+  "phone": "87654321",
+  "role": "HOTEL_ADMIN_ROLE",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "68273ca7260f755e33080eff"
+  },
+  "name": "Carlos",
+  "surname": "Ramírez",
+  "username": "carlitos123",
+  "email": "user@example.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$4/x1/Zdk5IjDF+CMc9iEzw$oX8pMm2/msf0Jw/oouihsGtda3khKNNmw1KiV5p5hVI",
+  "profilePicture": null,
+  "phone": "11223344",
+  "role": "USER_ROLE",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "68275053a22655b6057acb80"
+  },
+  "name": "Emanuel",
+  "surname": "López",
+  "username": "Emanuel2.0",
+  "email": "emanuel15@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$ABoSxgeobywe5jrZABK25g$pAf2+hp2pjqAFofEAvC+NdxMmLFNhV2ReRufopd7WFU",
+  "profilePicture": "Captura de pantalla (6)-1747406931562.png",
+  "phone": "87654321",
+  "role": "USER_ROLE",
+  "status": true
+}]

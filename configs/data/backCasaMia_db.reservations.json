@@ -1,0 +1,60 @@
+[{
+  "_id": {
+    "$oid": "68276930cfe2b8915e5f40e9"
+  },
+  "user": {
+    "$oid": "68275053a22655b6057acb80"
+  },
+  "room": {
+    "$oid": "6827617fde5c1b9daaa35a57"
+  },
+  "dateEntry": {
+    "$date": "2023-12-01T00:00:00.000Z"
+  },
+  "departureDate": {
+    "$date": "2023-12-05T00:00:00.000Z"
+  },
+  "state": "activa",
+  "extraServices": [],
+  "cardNumber": "1234567812345678",
+  "CVV": "123",
+  "expired": {
+    "$date": "2025-12-31T00:00:00.000Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-16T16:34:56.157Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-16T16:34:56.157Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6827697dcfe2b8915e5f40ee"
+  },
+  "user": {
+    "$oid": "68275053a22655b6057acb80"
+  },
+  "room": {
+    "$oid": "6827618cde5c1b9daaa35a5c"
+  },
+  "dateEntry": {
+    "$date": "2023-12-01T00:00:00.000Z"
+  },
+  "departureDate": {
+    "$date": "2023-12-05T00:00:00.000Z"
+  },
+  "state": "cancelada",
+  "extraServices": [],
+  "cardNumber": "1234567812345678",
+  "CVV": "123",
+  "expired": {
+    "$date": "2025-12-31T00:00:00.000Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-16T16:36:13.859Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-16T16:37:50.061Z"
+  }
+}]
