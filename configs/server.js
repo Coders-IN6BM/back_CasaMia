@@ -11,12 +11,10 @@ import roomRoutes from "../src/room/room.routes.js"
 import userRoutes from "../src/user/user.routes.js"
 import reservationRoutes from "../src/reservation/reservation.routes.js"
 import invoiceRoutes from "../src/invoice/invoice.routes.js"
-import extraServiceRoutes from "../src/serviceExtra/extraService.routes.js"
-import serviceRoutes from "../src/service/service.routes.js"
 import eventRoutes from "../src/event/event.routes.js"
 import { createDefaultUsers } from "./createDefaultUsers.js"
 import { createDefaultServices } from "./createDefaultServices.js"
-import { swaggerDocs } from "./swagger.js"; 
+
 
 const app = express();
 
@@ -36,8 +34,6 @@ const routes = (app) => {
     app.use("/casaMiaManagement/v1/room", roomRoutes);
     app.use("/casaMiaManagement/v1/reservation", reservationRoutes);
     app.use("/casaMiaManagement/v1/invoice", invoiceRoutes);
-    app.use("/casaMiaManagement/v1/extraServices", extraServiceRoutes);
-    app.use("/casaMiaManagement/v1/services", serviceRoutes);
     app.use("/casaMiaManagement/v1/event", eventRoutes);
 }
 
