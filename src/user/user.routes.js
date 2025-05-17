@@ -5,6 +5,8 @@ import { uploadProfilePicture } from "../middlewares/multer-uploads.js";
 
 const router = Router();
 
+router.delete("/delete/me", deleteUserValidator, deleteUser);
+
 router.delete("/delete/admin", deleteUserAdminValidator, deleteUserAdmin);
 
 router.put("/editProfile", updateUserValidator, editProfile);

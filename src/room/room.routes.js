@@ -4,21 +4,15 @@ import { searchRoomValidator,registerValidator, RoomAdminValidator,updateRoomVal
 
 const router = Router();
 
-
-
 router.get("/available/:idHotel?", searchRoomValidator, AllRoomsByHotel);
-
 
 router.post('/registerAdmin', RoomAdminValidator, registerRoom);
 
 router.delete('/admin/:roomId', RoomAdminValidator, deleteAdminRoom);
 
-
 router.put('/adminUpdate/:roomId', RoomAdminValidator, updateRoomAdmin);
 
-
 router.post('/registerManager', registerValidator, createRoomManager);
-
 
 router.delete('/manager/:roomId', updateRoomValidator, deleteRoomManager);
 
