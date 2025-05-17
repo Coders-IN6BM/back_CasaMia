@@ -1,0 +1,42 @@
+[{
+  "_id": {
+    "$oid": "68273ca7260f755e33080eef"
+  },
+  "name": "Professional Photography",
+  "description": "Event photography coverage by wedding photographers",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-16T13:24:55.553Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-16T13:24:55.553Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68273ca7260f755e33080ef4"
+  },
+  "name": "Breakfast Included",
+  "description": "Enjoy complimentary breakfast every morning during your stay.",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-16T13:24:55.692Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-16T13:24:55.692Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68273ca7260f755e33080ef7"
+  },
+  "name": "Airport Shuttle",
+  "description": "Transportation service from and to the airport available upon request.",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-16T13:24:55.703Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-16T13:24:55.703Z"
+  }
+}]

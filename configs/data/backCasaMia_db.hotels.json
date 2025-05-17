@@ -1,0 +1,75 @@
+[{
+  "_id": {
+    "$oid": "6827555eecd8b472c8a0f8b8"
+  },
+  "name": "Hotel Casa Amarilla",
+  "address": "7 calle, 11av, zona 7 Ciudad de Quetzaltenango",
+  "qualification": "5 estrellas",
+  "category": "Boutique",
+  "amenities": [
+    "WiFi",
+    "Piscina",
+    "Gimnasio",
+    "Spa"
+  ],
+  "admin": {
+    "$oid": "68273ca7260f755e33080ef9"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-16T15:10:22.522Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-16T15:10:22.522Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6827586becd8b472c8a0f8cf"
+  },
+  "name": "Hotel Casa Dorada",
+  "address": "9 calle, 12av, zona 11 Ciudad de Quetzaltenango",
+  "qualification": "5 estrellas",
+  "category": "Lujoso",
+  "amenities": [
+    "WiFi",
+    "Piscina",
+    "Gimnasio",
+    "Spa"
+  ],
+  "admin": {
+    "$oid": "68273ca7260f755e33080ef9"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-16T15:23:23.470Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-16T15:23:23.470Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682764ddde5c1b9daaa35a76"
+  },
+  "name": "Hotel Casa Verde",
+  "address": "9 calle, 12av, zona 12 Ciudad de Quetzaltenango",
+  "qualification": "5 estrellas",
+  "category": "Lujoso",
+  "amenities": [
+    "WiFi",
+    "Piscina",
+    "Gimnasio",
+    "Spa"
+  ],
+  "admin": {
+    "$oid": "68273ca7260f755e33080efc"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-16T16:16:29.517Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-16T16:16:29.517Z"
+  }
+}]
