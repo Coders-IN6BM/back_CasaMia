@@ -32,7 +32,7 @@ export const getUsers = async (req, res) => {
         if (username && users.length === 0) {
             return res.status(404).json({
                 success: false,
-                message: "Usuario no encontrado",
+                message: "User not found",
             });
         }
 
@@ -44,7 +44,7 @@ export const getUsers = async (req, res) => {
     } catch (err) {
         return res.status(500).json({
             success: false,
-            message: "Error al obtener los usuarios",
+            message: "Error fetching users",
             error: err.message
         });
     }
@@ -58,7 +58,7 @@ export const updatePassword = async (req, res) => {
         if (!token) {
             return res.status(401).json({
                 success: false,
-                message: "Token no proporcionado",
+                message: "Token not provided",
             });
         }
         const { uid } = jwt.verify(token.replace("Bearer ", ""), process.env.SECRETORPRIVATEKEY);
@@ -67,28 +67,28 @@ export const updatePassword = async (req, res) => {
         if (!currentPassword || !newPassword) {
             return res.status(400).json({
                 success: false,
-                message: "Debes proporcionar la contraseña actual y la nueva contraseña",
+                message: "You must provide the current and new password",
             });
         }
         const user = await User.findById(uid);
         if (!user) {
             return res.status(404).json({
                 success: false,
-                message: "Usuario no encontrado",
+                message: "User not found",
             });
         }
         const isCurrentPasswordValid = await verify(user.password, currentPassword);
         if (!isCurrentPasswordValid) {
             return res.status(400).json({
                 success: false,
-                message: "La contraseña actual es incorrecta",
+                message: "The current password is incorrect",
             });
         }
         const isSamePassword = await verify(user.password, newPassword);
         if (isSamePassword) {
             return res.status(400).json({
                 success: false,
-                message: "La nueva contraseña no puede ser igual a la anterior",
+                message: "The new password cannot be the same as the old one",
             });
         }
         const encryptedPassword = await hash(newPassword);
@@ -96,13 +96,13 @@ export const updatePassword = async (req, res) => {
         await user.save();
         return res.status(200).json({
             success: true,
-            message: "Contraseña actualizada exitosamente",
+            message: "Password successfully updated",
         });
     } catch (err) {
         console.error(err);
         return res.status(500).json({
             success: false,
-            message: "Error al actualizar la contraseña",
+            message: "Error updating password",
             error: err.message,
         });
     }
@@ -115,7 +115,7 @@ export const updateProfilePicture = async (req, res) => {
         if (!token) {
             return res.status(401).json({
                 success: false,
-                msg: "Token no proporcionado",
+                msg: "Token not provided",
             });
         }
         const { uid } = jwt.verify(token.replace("Bearer ", ""), process.env.SECRETORPRIVATEKEY);
@@ -124,7 +124,7 @@ export const updateProfilePicture = async (req, res) => {
         if (!newProfilePicture) {
             return res.status(400).json({
                 success: false,
-                msg: "No se proporcionó una nueva foto de perfil",
+                msg: "No new profile picture provided",
             });
         }
         const user = await User.findById(uid);
@@ -132,7 +132,7 @@ export const updateProfilePicture = async (req, res) => {
         if (!user) {
             return res.status(404).json({
                 success: false,
-                msg: "Usuario no encontrado",
+                msg: "User not found",
             });
         }
         if (user.profilePicture) {
@@ -140,7 +140,7 @@ export const updateProfilePicture = async (req, res) => {
             try {
                 await fs.unlink(oldProfilePicturePath);
             } catch (error) {
-                console.warn("No se pudo eliminar la imagen anterior, tal vez ya no existe.");
+                console.warn("Could not delete previous profile picture, it may not exist.");
             }
         }
         user.profilePicture = newProfilePicture;
@@ -148,14 +148,14 @@ export const updateProfilePicture = async (req, res) => {
 
         res.status(200).json({
             success: true,
-            msg: "Foto de perfil actualizada",
+            msg: "Profile picture updated",
             user,
         });
     } catch (err) {
         console.error(err);
         res.status(500).json({
             success: false,
-            msg: "Error al actualizar la foto de perfil",
+            msg: "Error updating profile picture",
             error: err.message,
         });
     }
@@ -165,29 +165,29 @@ export const editProfile = async (req, res) => {
     try {
         const token = req.header("Authorization");
         if (!token) {
-            return res.status(401).json({ success: false, message: "Token no proporcionado" });
+            return res.status(401).json({ success: false, message: "Token not provided" });
         }
         const { uid: userId } = jwt.verify(token.replace("Bearer ", ""), process.env.SECRETORPRIVATEKEY);
         const user = await User.findById(userId);
         if (!user) {
-            return res.status(404).json({ success: false, message: "Usuario no encontrado" });
+            return res.status(404).json({ success: false, message: "User not found" });
         }
 
         const { password, photo, role, ...updates } = req.body; 
 
         if (Object.keys(updates).length === 0) {
-            return res.status(400).json({ success: false, message: "No se proporcionaron campos para actualizar" });
+            return res.status(400).json({ success: false, message: "No fields provided for update" });
         }
         const updatedUser = await User.findByIdAndUpdate(userId, updates, { new: true });
         return res.status(200).json({
             success: true,
-            message: "Usuario actualizado exitosamente",
+            message: "User updated successfully",
             user: updatedUser,
         });
 
     } catch (error) {
         console.error(error);
-        return res.status(500).json({ success: false, message: "Error al actualizar el usuario", error: error.message });
+        return res.status(500).json({ success: false, message: "Error updating user", error: error.message });
     }
 };
 
@@ -197,7 +197,7 @@ export const editUserAdmin = async (req, res) => {
         if (!uid && !username) {
             return res.status(400).json({
                 success: false,
-                message: "Debe proporcionar un ID o un nombre de usuario para buscar al usuario."
+                message: "You must provide an ID or username to find the user."
             });
         }
         let user;
@@ -209,13 +209,13 @@ export const editUserAdmin = async (req, res) => {
         if (!user) {
             return res.status(404).json({
                 success: false,
-                message: "Usuario no encontrado"
+                message: "User not found"
             });
         }
         if (user.role === "ADMIN_ROLE") {
             return res.status(403).json({
                 success: false,
-                message: "No se puede modificar a un usuario con rol ADMIN_ROLE"
+                message: "You cannot modify a user with ADMIN_ROLE"
             });
         }
         if (updates.newUsername) {
@@ -224,7 +224,7 @@ export const editUserAdmin = async (req, res) => {
             if (existingUser && existingUser._id.toString() !== user._id.toString()) {
                 return res.status(409).json({
                     success: false,
-                    message: "El nuevo nombre de usuario ya está en uso"
+                    message: "The new username is already taken"
                 });
             }
             updates.username = updates.newUsername;
@@ -235,14 +235,14 @@ export const editUserAdmin = async (req, res) => {
         const updatedUser = await User.findByIdAndUpdate(user._id, updates, { new: true });
         return res.status(200).json({
             success: true,
-            message: "Usuario actualizado correctamente",
+            message: "User updated successfully",
             user: updatedUser
         });
     } catch (err) {
         console.error(err);
         return res.status(500).json({
             success: false,
-            message: "Error al actualizar el usuario",
+            message: "User updated successfully",
             error: err.message
         });
     }
@@ -254,7 +254,7 @@ export const deleteUserAdmin = async (req, res) => {
         if (!uid && !username) {
             return res.status(400).json({
                 success: false,
-                message: 'Debe proporcionar un ID o un nombre de usuario'
+                message: 'You must provide an ID or a username'
             });
         }
         let user;
@@ -266,13 +266,13 @@ export const deleteUserAdmin = async (req, res) => {
         if (!user) {
             return res.status(404).json({
                 success: false,
-                message: 'Usuario no encontrado'
+                message: 'User not found'
             });
         }
         if (user.role === 'ADMIN_ROLE' ) {
             return res.status(403).json({
                 success: false,
-                message: 'No se puede eliminar a un usuario administrador'
+                message: 'Cannot delete an administrator user'
             });
         }
         const reservas = await Reservation.find({ user: user._id });
@@ -286,14 +286,14 @@ export const deleteUserAdmin = async (req, res) => {
 
         return res.status(200).json({
             success: true,
-            message: 'Usuario y sus reservaciones eliminadas correctamente'
+            message: 'User and their reservations successfully deleted'
         });
 
     } catch (err) {
         console.error(err);
         return res.status(500).json({
             success: false,
-            message: 'Error al eliminar el usuario y sus datos relacionados',
+            message: 'Error deleting user and related data',
             error: err.message
         });
     }
@@ -306,7 +306,7 @@ export const deleteUser = async (req, res) => {
         if (!token) {
             return res.status(401).json({
                 success: false,
-                message: 'No se proporcionó token'
+                message: 'Token not provided'
             });
         }
 
@@ -316,7 +316,7 @@ export const deleteUser = async (req, res) => {
         if (!user) {
             return res.status(404).json({
                 success: false,
-                message: 'Usuario no encontrado'
+                message: 'User not found'
             });
         }
 
@@ -333,14 +333,14 @@ export const deleteUser = async (req, res) => {
 
         return res.status(200).json({
             success: true,
-            message: 'Usuario, sus reservaciones y habitaciones liberadas correctamente'
+            message: 'User, their reservations and freed rooms deleted successfully'
         });
 
     } catch (err) {
         console.error(err);
         return res.status(500).json({
             success: false,
-            message: 'Error al eliminar usuario y sus datos relacionados',
+            message: 'Error deleting user and related data',
             error: err.message
         });
     }
