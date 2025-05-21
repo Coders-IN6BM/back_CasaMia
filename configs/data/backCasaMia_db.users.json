@@ -49,8 +49,22 @@
   "username": "Emanuel2.0",
   "email": "emanuel15@gmail.com",
   "password": "$argon2id$v=19$m=65536,t=3,p=4$ABoSxgeobywe5jrZABK25g$pAf2+hp2pjqAFofEAvC+NdxMmLFNhV2ReRufopd7WFU",
-  "profilePicture": "Captura de pantalla (6)-1747406931562.png",
+  "profilePicture": "Jorge y CariÃ±osito-1747591007657.jpg",
   "phone": "87654321",
+  "role": "USER_ROLE",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "682a191b89a7a97d7858cc1c"
+  },
+  "name": "Carlos",
+  "surname": "López",
+  "username": "Ozuna.2.0",
+  "email": "ozuna13@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$CvfZHdwBjGlI6jIYRD8lzA$jRyu2yq1PjLNwNOE1BME8Pcjrrc7YpC8JPs3QCJmGlc",
+  "profilePicture": null,
+  "phone": "12345677",
   "role": "USER_ROLE",
   "status": true
 }]

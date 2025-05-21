@@ -8,7 +8,7 @@ import Hotel from "../hotel/hotel.model.js";
 export const reserveRoom = async (req, res) => {
     try {
       const token = req.header('Authorization');
-      if (!token) return res.status(401).json({ message: 'Token not provided' });
+      if (!token) return res.status(401).json({ message: 'Token no proporcionado' });
   
       const { uid } = jwt.verify(token.replace("Bearer ", ""), process.env.SECRETORPRIVATEKEY);
   
@@ -16,11 +16,11 @@ export const reserveRoom = async (req, res) => {
   
       const expiredDate = new Date(expired); 
       if (isNaN(expiredDate)) {
-        return res.status(400).json({ message: 'Invalid expiration date' });
+        return res.status(400).json({ message: 'Fecha de expiración inválida' });
       }
   
       const room = await Room.findById(roomId);
-      if (!room) return res.status(404).json({ message: 'Room not found' });
+      if (!room) return res.status(404).json({ message: 'Habitación no encontrada' });
   
       if (room.status === 'OCUPADA') {
         const existingReservations = await Reservation.find({
@@ -33,7 +33,7 @@ export const reserveRoom = async (req, res) => {
         });
   
         if (existingReservations.length > 0) {
-          return res.status(400).json({ message: 'The room is already reserved for the selected dates' });
+          return res.status(400).json({ message: 'La habitación ya está reservada para las fechas seleccionadas' });
         }
       }
   
@@ -44,7 +44,7 @@ export const reserveRoom = async (req, res) => {
         });
   
         if (validExtraServices.length !== extraServices.length) {
-          return res.status(400).json({ message: 'Some extra services do not belong to the room’s hotel.' });
+          return res.status(400).json({ message: 'Algunos servicios extra no pertenecen al hotel de la habitación.' });
         }
       }
   
@@ -65,13 +65,13 @@ export const reserveRoom = async (req, res) => {
       await room.save();
   
       return res.status(201).json({
-        message: 'Reservation completed successfully',
+        message: 'Reservación realizada correctamente',
         reservation: newReservation
       });
   
     } catch (err) {
       console.error(err);
-      return res.status(500).json({ message: 'Error making reservation', error: err.message });
+      return res.status(500).json({ message: 'Error al realizar la reservación', error: err.message });
     }
   };
 
@@ -79,7 +79,7 @@ export const reserveRoom = async (req, res) => {
     try {
       const token = req.header("Authorization");
       if (!token) {
-        return res.status(401).json({ message: "Token not provided" });
+        return res.status(401).json({ message: "Token no proporcionado" });
       }
   
       const { uid } = jwt.verify(token.replace("Bearer ", ""), process.env.SECRETORPRIVATEKEY);
@@ -87,15 +87,15 @@ export const reserveRoom = async (req, res) => {
   
       const reservation = await Reservation.findById(reservationId);
       if (!reservation) {
-        return res.status(404).json({ message: "Reservation not found" });
+        return res.status(404).json({ message: "Reservación no encontrada" });
       }
   
       if (reservation.user.toString() !== uid) {
-        return res.status(403).json({ message: "You are not authorized to cancel this reservation" });
+        return res.status(403).json({ message: "No estás autorizado para cancelar esta reservación" });
       }
   
       if (reservation.state !== "activa") {
-        return res.status(400).json({ message: "Only active reservations can be canceled" });
+        return res.status(400).json({ message: "Solo se pueden cancelar reservaciones activas" });
       }
   
       reservation.state = "cancelada";
@@ -116,11 +116,11 @@ export const reserveRoom = async (req, res) => {
       }
       
   
-      return res.status(200).json({ message: "Reservation canceled successfully" });
+      return res.status(200).json({ message: "Reservación cancelada exitosamente" });
     } catch (err) {
       console.error(err);
       return res.status(500).json({
-        message: "Error canceling reservation",
+        message: "Error al cancelar la reservación",
         error: err.message
       });
     }
@@ -129,7 +129,7 @@ export const reserveRoom = async (req, res) => {
   export const MyReservations = async (req, res) => {
     try {
       const token = req.header("Authorization");
-      if (!token) return res.status(401).json({ message: "Token not provided" });
+      if (!token) return res.status(401).json({ message: "Token no proporcionado" });
   
       const { uid } = jwt.verify(token.replace("Bearer ", ""), process.env.SECRETORPRIVATEKEY);
   
@@ -139,7 +139,7 @@ export const reserveRoom = async (req, res) => {
   
       res.json({ reservations });
     } catch (err) {
-      res.status(500).json({ message: "Error retrieving reservations", error: err.message });
+      res.status(500).json({ message: "Error al obtener las reservaciones", error: err.message });
     }
   };
   
@@ -155,7 +155,7 @@ export const ReservationAdmin = async (req, res) => {
       user = await User.findOne({ username: identifier });
     }
 
-    if (!user) return res.status(404).json({ message: "User not found" });
+    if (!user) return res.status(404).json({ message: "Usuario no encontrado" });
 
     const reservations = await Reservation.find({ user: user._id })
       .populate("extraServices", "name _id")
@@ -163,7 +163,7 @@ export const ReservationAdmin = async (req, res) => {
 
     res.json({ reservations });
   } catch (err) {
-    res.status(500).json({ message: "Error retrieving reservations", error: err.message });
+    res.status(500).json({ message: "Error al obtener reservaciones", error: err.message });
   }
 };
 
@@ -171,7 +171,7 @@ export const ReservationAdmin = async (req, res) => {
 export const UserReservationsAdminHotel = async (req, res) => {
   try {
     const token = req.header("Authorization");
-    if (!token) return res.status(401).json({ message: "Token not provided" });
+    if (!token) return res.status(401).json({ message: "Token no proporcionado" });
 
     const { uid } = jwt.verify(token.replace("Bearer ", ""), process.env.SECRETORPRIVATEKEY);
     const { identifier } = req.params;
@@ -182,7 +182,7 @@ export const UserReservationsAdminHotel = async (req, res) => {
     } else {
       user = await User.findOne({ username: identifier });
     }
-    if (!user) return res.status(404).json({ message: "User not found" });
+    if (!user) return res.status(404).json({ message: "Usuario no encontrado" });
 
     const hotelesAdmin = await Hotel.find({ admin: uid }).select("_id");
 
@@ -200,7 +200,7 @@ export const UserReservationsAdminHotel = async (req, res) => {
 
     res.json({ reservations: filteredReservations });
   } catch (err) {
-    res.status(500).json({ message: "Error retrieving reservations", error: err.message });
+    res.status(500).json({ message: "Error al obtener reservaciones", error: err.message });
   }
 };
 

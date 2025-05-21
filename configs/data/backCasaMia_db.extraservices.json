@@ -1,0 +1,72 @@
+[{
+  "_id": {
+    "$oid": "682a3301d3a4e89e03bbb3b6"
+  },
+  "name": "Desayuno buffet premium",
+  "description": "Desayuno buffet con bebidas premium",
+  "cost": 40,
+  "hotel": {
+    "$oid": "6827586becd8b472c8a0f8cf"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-18T19:20:33.328Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-18T19:23:03.170Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682a331cd3a4e89e03bbb3ba"
+  },
+  "name": "Desayuno VIP",
+  "description": "Desayuno VIP incluido",
+  "cost": 30,
+  "hotel": {
+    "$oid": "6827555eecd8b472c8a0f8b8"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-18T19:21:00.655Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-18T19:21:00.655Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682a3330d3a4e89e03bbb3be"
+  },
+  "name": "Desayuno típico",
+  "description": "Desayuno típico incluido",
+  "cost": 20,
+  "hotel": {
+    "$oid": "682764ddde5c1b9daaa35a76"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-18T19:21:20.659Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-18T19:21:20.659Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682a34fcd3a4e89e03bbb3c9"
+  },
+  "name": "Camareros para salón",
+  "description": "Camareros para eventos",
+  "cost": 100,
+  "hotel": {
+    "$oid": "6827586becd8b472c8a0f8cf"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-18T19:29:00.026Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-18T19:33:37.559Z"
+  }
+}]
