@@ -1,0 +1,1901 @@
+{
+	"info": {
+		"_postman_id": "da83ad1e-a76a-4605-aac1-c333dc54619d",
+		"name": "Proyecto",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42058393"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "RegisterUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Emanuel",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "López",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "Emanuel2.0",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "emanuel15@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "holaBro123#",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "87654321",
+									"type": "text"
+								},
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": "/C:/Users/Informatica/Pictures/Screenshots/Captura de pantalla (6).png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login-Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"admin@example.com\",\r\n  \"password\": \"Admin123#\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login-Hotel",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"hoteladmin@example.com\",\r\n  \"password\": \"Hotel456#\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LoginUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"emanuel15@gmail.com\",\r\n  \"password\": \"holaBro123#\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteMe",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJhMTdkYmE5M2E4ZWE0NWVhZDQwNjEiLCJpYXQiOjE3NDc1ODkxNzAsImV4cCI6MTc0NzU5Mjc3MH0.JEGocf4vuagJEuMKkXLsMnnFLOAqK83hyW9M5FwUUpY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/user/delete/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"user",
+								"delete",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteByAdmin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI3M2NhNzI2MGY3NTVlMzMwODBlZjkiLCJpYXQiOjE3NDc1ODk1NjksImV4cCI6MTc0NzU5MzE2OX0.AnxzLXVO7heoJdbi2642oQjDaZAZpbLBrswv9AdxWPU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"uid\": \"682a193989a7a97d7858cc20\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/user/delete/admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"user",
+								"delete",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditMyProfile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI3M2NhNzI2MGY3NTVlMzMwODBlZjkiLCJpYXQiOjE3NDc1ODk1NjksImV4cCI6MTc0NzU5MzE2OX0.AnxzLXVO7heoJdbi2642oQjDaZAZpbLBrswv9AdxWPU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Emilio\",\r\n  \"phone\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/user/editProfile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"user",
+								"editProfile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditProfileByAdmin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI3M2NhNzI2MGY3NTVlMzMwODBlZjkiLCJpYXQiOjE3NDc1ODk1NjksImV4cCI6MTc0NzU5MzE2OX0.AnxzLXVO7heoJdbi2642oQjDaZAZpbLBrswv9AdxWPU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"uid\": \"682a191b89a7a97d7858cc1c\",\r\n  \"name\": \"Carlos\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/user/editUsers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"user",
+								"editUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUsers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI3M2NhNzI2MGY3NTVlMzMwODBlZjkiLCJpYXQiOjE3NDc1ODk1NjksImV4cCI6MTc0NzU5MzE2OX0.AnxzLXVO7heoJdbi2642oQjDaZAZpbLBrswv9AdxWPU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"Ozuna.2.0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/user/getUsers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"user",
+								"getUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditPassword",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJhMTkxYjg5YTdhOTdkNzg1OGNjMWMiLCJpYXQiOjE3NDc1OTA3MTEsImV4cCI6MTc0NzU5NDMxMX0.k1OTEg9iTw2wpVdbyAAj7NhpAtTIExXlmvzOCpHrcRk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"currentPassword\": \"holaBro123#\",\r\n  \"newPassword\": \"holabro1234#\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/user/updatePassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"user",
+								"updatePassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditMyImageProfile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI3NTA1M2EyMjY1NWI2MDU3YWNiODAiLCJpYXQiOjE3NDc1OTA5NTAsImV4cCI6MTc0NzU5NDU1MH0.mRxdIiMFmSNljMq5o0qaILl_WEPh8TykU35u3F3seg0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": "/C:/Users/PC_01/Pictures/Jorge y Cariñosito.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/user/updateProfilePicture",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"user",
+								"updateProfilePicture"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Hotel",
+			"item": [
+				{
+					"name": "RegisterHotel",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI3M2NhNzI2MGY3NTVlMzMwODBlZjkiLCJpYXQiOjE3NDc0MTEyNzIsImV4cCI6MTc0NzQxNDg3Mn0.RzJM4-PYX33v-2P0QmK4lZPNThIl6kqUxNOJh6lfvIc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Hotel Casa Verde\",\r\n    \"address\": \"9 calle, 12av, zona 12 Ciudad de Quetzaltenango\",\r\n    \"qualification\": \"5 estrellas\",\r\n    \"category\": \"Lujoso\",\r\n    \"amenities\": [\"WiFi\", \"Piscina\", \"Gimnasio\", \"Spa\"],\r\n    \"admin\": \"68273ca7260f755e33080efc\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/hotel/registerHotel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"hotel",
+								"registerHotel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SearchHotel",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Hotel\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/hotel/searchHotel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"hotel",
+								"searchHotel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SearchHotelAdmin",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI3M2NhNzI2MGY3NTVlMzMwODBlZjkiLCJpYXQiOjE3NDc0MDcwNjEsImV4cCI6MTc0NzQxMDY2MX0.p50TvJpChLM709tb3L-qJ5licfO14A1tRgbaRyxhKY0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/hotel/searchHotelsAdmin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"hotel",
+								"searchHotelsAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditHotel",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI3M2NhNzI2MGY3NTVlMzMwODBlZjkiLCJpYXQiOjE3NDc0MDcwNjEsImV4cCI6MTc0NzQxMDY2MX0.p50TvJpChLM709tb3L-qJ5licfO14A1tRgbaRyxhKY0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Hotel Maya\",\r\n  \"address\": \"Zona 1, parque central Xela\",\r\n  \"qualification\": \"5 estrellas\",\r\n  \"category\": \"Lujoso\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/hotel/updateHotel/6827510aa285a91da20c73b3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"hotel",
+								"updateHotel",
+								"6827510aa285a91da20c73b3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteHotel",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI3M2NhNzI2MGY3NTVlMzMwODBlZmMiLCJpYXQiOjE3NDc0MDcwNzIsImV4cCI6MTc0NzQxMDY3Mn0.7B6ZEM4jfTVyCk-Pp2gzBHd1UYgCd8fOWYLI_rp1kKc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/hotel/deleteHotel/6827510aa285a91da20c73b3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"hotel",
+								"deleteHotel",
+								"6827510aa285a91da20c73b3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "StaticsManager",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI3M2NhNzI2MGY3NTVlMzMwODBlZjkiLCJpYXQiOjE3NDc0MDcwNjEsImV4cCI6MTc0NzQxMDY2MX0.p50TvJpChLM709tb3L-qJ5licfO14A1tRgbaRyxhKY0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/hotel/statisticsManager",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"hotel",
+								"statisticsManager"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "StaticsHotel",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI3M2NhNzI2MGY3NTVlMzMwODBlZjkiLCJpYXQiOjE3NDc0MDcwNjEsImV4cCI6MTc0NzQxMDY2MX0.p50TvJpChLM709tb3L-qJ5licfO14A1tRgbaRyxhKY0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/hotel/statisticsHotel/6827555eecd8b472c8a0f8b8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"hotel",
+								"statisticsHotel",
+								"6827555eecd8b472c8a0f8b8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Room",
+			"item": [
+				{
+					"name": "SearchRoomParam",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idHotel\": \"6827510aa285a91da20c73b3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/room/available",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"room",
+								"available"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RegisterRoom",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI3M2NhNzI2MGY3NTVlMzMwODBlZjkiLCJpYXQiOjE3NDc0MTEyNzIsImV4cCI6MTc0NzQxNDg3Mn0.RzJM4-PYX33v-2P0QmK4lZPNThIl6kqUxNOJh6lfvIc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"tipo\": \"doble\",\r\n  \"capacidad\": 7,\r\n  \"precio\": 100,\r\n  \"hotelId\": \"6827555eecd8b472c8a0f8b8\",\r\n  \"numeroCuarto\": 150\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/room/registerAdmin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"room",
+								"registerAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteRoom",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI3M2NhNzI2MGY3NTVlMzMwODBlZjkiLCJpYXQiOjE3NDc0MTEyNzIsImV4cCI6MTc0NzQxNDg3Mn0.RzJM4-PYX33v-2P0QmK4lZPNThIl6kqUxNOJh6lfvIc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/room/admin/6827616ede5c1b9daaa35a52",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"room",
+								"admin",
+								"6827616ede5c1b9daaa35a52"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditRoom",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI3M2NhNzI2MGY3NTVlMzMwODBlZjkiLCJpYXQiOjE3NDc0MTEyNzIsImV4cCI6MTc0NzQxNDg3Mn0.RzJM4-PYX33v-2P0QmK4lZPNThIl6kqUxNOJh6lfvIc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"tipo\": \"suite\",\r\n  \"capacidad\": 4,\r\n  \"precio\": 200,\r\n  \"numeroCuarto\": 102\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/room/adminUpdate/6827618cde5c1b9daaa35a5c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"room",
+								"adminUpdate",
+								"6827618cde5c1b9daaa35a5c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RegisterRoomManager",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI3M2NhNzI2MGY3NTVlMzMwODBlZjkiLCJpYXQiOjE3NDc1ODM5ODcsImV4cCI6MTc0NzU4NzU4N30.DJ-k_cmxxRI9wBCVtacDIVoCmhh7rXw3HUcXprUDzlI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"tipo\": \"familiar\",\r\n  \"capacidad\": 5,\r\n  \"precio\": 150,\r\n  \"hotelId\": \"6827555eecd8b472c8a0f8b8\",\r\n  \"numeroCuarto\": 203\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/room/registerManager",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"room",
+								"registerManager"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteRoomManager",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI3M2NhNzI2MGY3NTVlMzMwODBlZmMiLCJpYXQiOjE3NDc0MTI1NjYsImV4cCI6MTc0NzQxNjE2Nn0.5uABJv8BVY-HsjzXS1i7xvVkGe9irMXFqzXUiAcI86Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/room/manager/6827666ecfe2b8915e5f40d5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"room",
+								"manager",
+								"6827666ecfe2b8915e5f40d5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editRoomManager",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI3M2NhNzI2MGY3NTVlMzMwODBlZmMiLCJpYXQiOjE3NDc0MTI1NjYsImV4cCI6MTc0NzQxNjE2Nn0.5uABJv8BVY-HsjzXS1i7xvVkGe9irMXFqzXUiAcI86Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"tipo\": \"lujo\",\r\n  \"capacidad\": 3,\r\n  \"precio\": 300,\r\n  \"numeroCuarto\": 202\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/room/managerUpdate/6827673ecfe2b8915e5f40df",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"room",
+								"managerUpdate",
+								"6827673ecfe2b8915e5f40df"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reservation",
+			"item": [
+				{
+					"name": "AddReservation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI3NTA1M2EyMjY1NWI2MDU3YWNiODAiLCJpYXQiOjE3NDc2Njc0NzIsImV4cCI6MTc0NzY3MTA3Mn0.i70bB4i24f-ghNr8KJxHkY5dTpuBPWXfLe4v7BkwWMA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"roomId\": \"68276198de5c1b9daaa35a64\",\r\n  \"dateEntry\": \"2023-10-04\",\r\n  \"departureDate\": \"2023-10-21\",\r\n  \"cardNumber\": \"1234567487415678\",\r\n  \"CVV\": \"134\",\r\n  \"expired\": \"2035-11-30\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/reservation/Reserve",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"reservation",
+								"Reserve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CancelReservation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI3NTA1M2EyMjY1NWI2MDU3YWNiODAiLCJpYXQiOjE3NDc0MTMyNDMsImV4cCI6MTc0NzQxNjg0M30.FriJc7nDD1NBesN6TbCT7lF8R-2Cf-e2dUZvTP4LUPg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/reservation/Cancel/6827697dcfe2b8915e5f40ee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"reservation",
+								"Cancel",
+								"6827697dcfe2b8915e5f40ee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetReservation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI3M2NhNzI2MGY3NTVlMzMwODBlZmMiLCJpYXQiOjE3NDc1ODMwNzgsImV4cCI6MTc0NzU4NjY3OH0.mUx3WXI-hg3s5vgck3ZIAsYt4js7cOBr4Aqun4h-ttI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/reservation/my-reservations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"reservation",
+								"my-reservations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetReservationByAdmin",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI3M2NhNzI2MGY3NTVlMzMwODBlZjkiLCJpYXQiOjE3NDc1ODMzNjMsImV4cCI6MTc0NzU4Njk2M30.pPh3lAdy3_XzcUmWvujLns7mPgd3l-iPgPAV0pkwirg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/reservation/user-reservations/68275053a22655b6057acb80",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"reservation",
+								"user-reservations",
+								"68275053a22655b6057acb80"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetReservationByManager",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI3M2NhNzI2MGY3NTVlMzMwODBlZjkiLCJpYXQiOjE3NDc1ODQyNDIsImV4cCI6MTc0NzU4Nzg0Mn0.BMLzf1yzT3O7_e7022MFonGamdsV41hV7e1r135BaUw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/reservation/admin/hotel-reservations/68275053a22655b6057acb80",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"reservation",
+								"admin",
+								"hotel-reservations",
+								"68275053a22655b6057acb80"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Service",
+			"item": [
+				{
+					"name": "AddService",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI3M2NhNzI2MGY3NTVlMzMwODBlZjkiLCJpYXQiOjE3NDc1OTI1OTcsImV4cCI6MTc0NzU5NjE5N30.kTIQrvaeORKdM4GIHZW7hEOre1JXKUOCqoxf1KQvaeg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Cine\",\r\n  \"description\": \"Cine VIP\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/services/createService",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"services",
+								"createService"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetServices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/services",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetServiceById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/services/getserviceId/68273ca7260f755e33080ef4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"services",
+								"getserviceId",
+								"68273ca7260f755e33080ef4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetServiceByName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/services/getserviceName/Spa Premium",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"services",
+								"getserviceName",
+								"Spa Premium"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditService",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI3M2NhNzI2MGY3NTVlMzMwODBlZjkiLCJpYXQiOjE3NDc1OTIyMDQsImV4cCI6MTc0NzU5NTgwNH0.bDrdFwWYgs879NV1RJYL-MWTHDGrg6WWUOGy0qMf_uA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Spa Premium\",\r\n  \"description\": \"Spa con masajes incluidos\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/services/editservice/682a216589a7a97d7858cc5a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"services",
+								"editservice",
+								"682a216589a7a97d7858cc5a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI3M2NhNzI2MGY3NTVlMzMwODBlZjkiLCJpYXQiOjE3NDc1OTI1OTcsImV4cCI6MTc0NzU5NjE5N30.kTIQrvaeORKdM4GIHZW7hEOre1JXKUOCqoxf1KQvaeg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/services/deleteservice/682a259d89a7a97d7858cc6f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"services",
+								"deleteservice",
+								"682a259d89a7a97d7858cc6f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "serviceExtra",
+			"item": [
+				{
+					"name": "CreateExtraService",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI3M2NhNzI2MGY3NTVlMzMwODBlZjkiLCJpYXQiOjE3NDc1OTU5OTIsImV4cCI6MTc0NzU5OTU5Mn0.2ZrVi5Gw1108XOBWIwzfRPZgbHz6jGhl01v2bHDxTXs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Salón para fiestas\",\r\n  \"cost\": 1500,\r\n  \"description\": \"Salón VIP para 200 personas\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/extraServices/addExtraService/6827586becd8b472c8a0f8cf",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"extraServices",
+								"addExtraService",
+								"6827586becd8b472c8a0f8cf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditExtraService",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI3M2NhNzI2MGY3NTVlMzMwODBlZjkiLCJpYXQiOjE3NDc1OTU5OTIsImV4cCI6MTc0NzU5OTU5Mn0.2ZrVi5Gw1108XOBWIwzfRPZgbHz6jGhl01v2bHDxTXs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Camareros para salón\",\r\n  \"cost\": 100,\r\n  \"description\": \"Camareros para eventos\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/extraServices/updateExtraService/6827586becd8b472c8a0f8cf/682a34fcd3a4e89e03bbb3c9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"extraServices",
+								"updateExtraService",
+								"6827586becd8b472c8a0f8cf",
+								"682a34fcd3a4e89e03bbb3c9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteExtraService",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI3M2NhNzI2MGY3NTVlMzMwODBlZjkiLCJpYXQiOjE3NDc1OTU5OTIsImV4cCI6MTc0NzU5OTU5Mn0.2ZrVi5Gw1108XOBWIwzfRPZgbHz6jGhl01v2bHDxTXs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/extraServices/DeleteExtraService/6827586becd8b472c8a0f8cf/682a32e6d3a4e89e03bbb3b2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"extraServices",
+								"DeleteExtraService",
+								"6827586becd8b472c8a0f8cf",
+								"682a32e6d3a4e89e03bbb3b2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetExtraServices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/extraServices/list/6827586becd8b472c8a0f8cf",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"extraServices",
+								"list",
+								"6827586becd8b472c8a0f8cf"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Event",
+			"item": [
+				{
+					"name": "AddEvent",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI3M2NhNzI2MGY3NTVlMzMwODBlZjkiLCJpYXQiOjE3NDc2NjUzMTIsImV4cCI6MTc0NzY2ODkxMn0.Lu5v2s7YfEZoIlPElmsK38t2VDXbwlrwgnwSGOH6mg4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"hotelId\": \"6827586becd8b472c8a0f8cf\",\r\n  \"nombre\": \"Graduación de diversificado\",\r\n  \"descripcion\": \"Graduación para 200 personas\",\r\n  \"fecha\": \"2023-12-01T00:00:00.000Z\",\r\n  \"servicios\": [\"68273ca7260f755e33080eef\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/event/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"event",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditEvent",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI3M2NhNzI2MGY3NTVlMzMwODBlZmMiLCJpYXQiOjE3NDc1OTc0ODksImV4cCI6MTc0NzYwMTA4OX0.JPHCE6ts0-jB-DsrtRU5NuP0uekPPAMbq286TBc76Og",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Concierto de Jazz Premium\",\r\n  \"descripcion\": \"Jazz con artistas internacionales\",\r\n  \"fecha\": \"2025-07-11\",\r\n  \"servicios\": [\"682a216589a7a97d7858cc5a\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/event/edit/682764ddde5c1b9daaa35a76/682a373a7412672e10e7d170",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"event",
+								"edit",
+								"682764ddde5c1b9daaa35a76",
+								"682a373a7412672e10e7d170"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteEvent",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI3M2NhNzI2MGY3NTVlMzMwODBlZjkiLCJpYXQiOjE3NDc2NjUzMTIsImV4cCI6MTc0NzY2ODkxMn0.Lu5v2s7YfEZoIlPElmsK38t2VDXbwlrwgnwSGOH6mg4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/event/delete/6827586becd8b472c8a0f8cf/682b420fa903b2d20cb2e59c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"event",
+								"delete",
+								"6827586becd8b472c8a0f8cf",
+								"682b420fa903b2d20cb2e59c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetEventByHotel",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/event/hotel/6827586becd8b472c8a0f8cf",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"event",
+								"hotel",
+								"6827586becd8b472c8a0f8cf"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Invoice",
+			"item": [
+				{
+					"name": "GenerateInvoice",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var template = `\r",
+									"<style type=\"text/css\">\r",
+									"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+									"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+									"    .tftable tr {background-color:#ffffff;}\r",
+									"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+									"    .tftable tr:hover {background-color:#e0ffff;}\r",
+									"</style>\r",
+									"\r",
+									"<table class=\"tftable\" border=\"1\">\r",
+									"    <tr>\r",
+									"        <th>Error</th>\r",
+									"    </tr>\r",
+									"    <tr>\r",
+									"        <td>PDF content cannot be visualized in a table format.</td>\r",
+									"    </tr>\r",
+									"</table>\r",
+									"`;\r",
+									"\r",
+									"function constructVisualizerPayload() {\r",
+									"    return {response: pm.response.json()}\r",
+									"}\r",
+									"\r",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI3M2NhNzI2MGY3NTVlMzMwODBlZmMiLCJpYXQiOjE3NDc2NzQ1MDcsImV4cCI6MTc0NzY3ODEwN30.xJ7I37lk6FUEX5EIUBu40YqziaMmIrqZ7AZ5mv_MVr8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/invoice/generate/682a012bf03d29f413f6b851",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"invoice",
+								"generate",
+								"682a012bf03d29f413f6b851"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GenerateInvoiceByAdmin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI3M2NhNzI2MGY3NTVlMzMwODBlZjkiLCJpYXQiOjE3NDc2NzA4MTYsImV4cCI6MTc0NzY3NDQxNn0.kpp32LwNjFlIuIWl1YW0YcqS9jozFVTFezqZ0iDujvs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/invoice/generateAdmin/682a0210f03d29f413f6b870",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"invoice",
+								"generateAdmin",
+								"682a0210f03d29f413f6b870"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListInvoiceByHotel",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI3M2NhNzI2MGY3NTVlMzMwODBlZjkiLCJpYXQiOjE3NDc2NjY0ODgsImV4cCI6MTc0NzY3MDA4OH0.XLrnMT8TTpDbe-ktoRtfdBOKwTQaOwABwmQ2kwYTyeY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/invoice/hotel/6827586becd8b472c8a0f8cf",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"invoice",
+								"hotel",
+								"6827586becd8b472c8a0f8cf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListInvoiceByUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI3M2NhNzI2MGY3NTVlMzMwODBlZjkiLCJpYXQiOjE3NDc2NjY0ODgsImV4cCI6MTc0NzY3MDA4OH0.XLrnMT8TTpDbe-ktoRtfdBOKwTQaOwABwmQ2kwYTyeY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/invoice/user/68273ca7260f755e33080efc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"invoice",
+								"user",
+								"68273ca7260f755e33080efc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListInvoiceByAdmin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI3M2NhNzI2MGY3NTVlMzMwODBlZjkiLCJpYXQiOjE3NDc2NjY0ODgsImV4cCI6MTc0NzY3MDA4OH0.XLrnMT8TTpDbe-ktoRtfdBOKwTQaOwABwmQ2kwYTyeY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/casaMiaManagement/v1/invoice/hotelAdmin/6827586becd8b472c8a0f8cf",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"casaMiaManagement",
+								"v1",
+								"invoice",
+								"hotelAdmin",
+								"6827586becd8b472c8a0f8cf"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

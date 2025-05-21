@@ -211,7 +211,7 @@ export const deleteRoomManager = async (req, res) => {
 
       const hotel = await Hotel.findById(room.hotel);
       if (!hotel || hotel.admin.toString() !== uid) {
-          return res.status(403).json({ message: "Not authorized to delete this room" });
+          return res.status(403).json({ message: "No autorizado para eliminar esta habitación" });
       }
 
       const reservations = await Reservation.find({ room: roomId, state: 'activa' });
@@ -242,11 +242,11 @@ export const deleteRoomManager = async (req, res) => {
 
       await Room.findByIdAndDelete(roomId);
       return res.status(200).json({
-          message: `Room successfully removed. Reservations affected.: ${reservations.length}`
+          message: `Habitación eliminada correctamente. Reservaciones afectadas: ${reservations.length}`
       });
   } catch (err) {
       return res.status(500).json({
-          message: "Error deleting the room",
+          message: "Error al eliminar la habitación",
           error: err.message
       });
   }
@@ -262,11 +262,11 @@ export const updateRoomManager = async (req, res) => {
       const updates = req.body;
 
       const room = await Room.findById(roomId);
-      if (!room) return res.status(404).json({ message: "Room not found" });
+      if (!room) return res.status(404).json({ message: "Habitación no encontrada" });
 
       const hotel = await Hotel.findById(room.hotel);
       if (!hotel || hotel.admin.toString() !== uid) {
-          return res.status(403).json({ message: "Not authorized to modify this room" });
+          return res.status(403).json({ message: "No autorizado para modificar esta habitación" });
       }
       if (updates.numeroCuarto && updates.numeroCuarto !== room.numeroCuarto) {
           const existingRoom = await Room.findOne({
@@ -275,15 +275,15 @@ export const updateRoomManager = async (req, res) => {
               numeroCuarto: updates.numeroCuarto
           });
           if (existingRoom) {
-              return res.status(400).json({ message: "There is already a room with that number in the hotel." });
+              return res.status(400).json({ message: "Ya existe una habitación con ese número en el hotel" });
           }
       }
 
       const updatedRoom = await Room.findByIdAndUpdate(roomId, updates, { new: true });
-      return res.status(200).json({ message: "Successfully updated room", room: updatedRoom });
+      return res.status(200).json({ message: "Habitación actualizada correctamente", room: updatedRoom });
   } catch (err) {
       return res.status(500).json({
-          message: "Error updating room",
+          message: "Error al actualizar la habitación",
           error: err.message
       });
   }
