@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { createEvent, updateEvent, deleteEvent, getEventsByHotel } from './event.controller.js';
+import { createEvent, updateEvent, deleteEvent, getEventsByHotel, getEventsById } from './event.controller.js';
 import { createEventValidator, editDeleteEventValidator, DeleteEventValidator } from '../middlewares/event-validators.js';
 
 const router = Router();
@@ -152,5 +152,61 @@ router.delete('/delete/:hotelId/:eventId', DeleteEventValidator, deleteEvent);
  *         description: Error en la solicitud
  */
 router.get('/hotel/:hotelId', getEventsByHotel);
+
+/**
+ * @swagger
+ * /casaMiaManagement/v1/event/eventId/{eventId}:
+ *   get:
+ *     summary: Obtener un evento por ID
+ *     tags: [Events]
+ *     parameters:
+ *       - in: path
+ *         name: eventId
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: ID del evento a obtener
+ *     responses:
+ *       200:
+ *         description: Evento obtenido exitosamente
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 nombre:
+ *                   type: string
+ *                   description: Nombre del evento
+ *                 descripcion:
+ *                   type: string
+ *                   description: Descripción del evento
+ *                 fecha:
+ *                   type: string
+ *                   format: date
+ *                   description: Fecha del evento
+ *                 hotel:
+ *                   type: object
+ *                   description: Información del hotel asociado
+ *                   properties:
+ *                     _id:
+ *                       type: string
+ *                     nombre:
+ *                       type: string
+ *                 servicios:
+ *                   type: array
+ *                   description: Lista de servicios asociados
+ *                   items:
+ *                     type: object
+ *                     properties:
+ *                       _id:
+ *                         type: string
+ *                       nombre:
+ *                         type: string
+ *       404:
+ *         description: Evento no encontrado
+ *       500:
+ *         description: Error en el servidor
+ */
+router.get('/eventId/:eventId', getEventsById);
 
 export default router;

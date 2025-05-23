@@ -62,3 +62,18 @@ export const getEventsByHotel = async (req, res) => {
     res.status(500).json({ message: 'Error retrieving events', error: error.message });
   }
 };
+
+export const getEventsById = async (req, res) => {
+  try {
+    const { eventId } = req.params;
+
+    const event = await Event.findById(eventId).populate('servicios').populate('hotel');
+    if (!event) {
+      return res.status(404).json({ message: 'Event not found' });
+    }
+
+    res.status(200).json(event);
+  } catch (error) {
+    res.status(500).json({ message: 'Error retrieving event', error: error.message });
+  }
+};
