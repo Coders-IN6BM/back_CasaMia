@@ -1,0 +1,81 @@
+[{
+  "_id": {
+    "$oid": "682a373a7412672e10e7d170"
+  },
+  "nombre": "Concierto de Jazz Premium",
+  "descripcion": "Jazz con artistas internacionales",
+  "fecha": {
+    "$date": "2025-07-11T00:00:00.000Z"
+  },
+  "servicios": [
+    {
+      "$oid": "682a216589a7a97d7858cc5a"
+    }
+  ],
+  "hotel": {
+    "$oid": "682764ddde5c1b9daaa35a76"
+  },
+  "status": "ACTIVO",
+  "createdAt": {
+    "$date": "2025-05-18T19:38:34.071Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-18T19:45:02.808Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682a37f37412672e10e7d174"
+  },
+  "nombre": "Concierto de Jazz",
+  "descripcion": "Noche de jazz en el lobby",
+  "fecha": {
+    "$date": "2025-07-10T00:00:00.000Z"
+  },
+  "servicios": [
+    {
+      "$oid": "68273ca7260f755e33080ef7"
+    },
+    {
+      "$oid": "68273ca7260f755e33080ef4"
+    }
+  ],
+  "hotel": {
+    "$oid": "6827586becd8b472c8a0f8cf"
+  },
+  "status": "ACTIVO",
+  "createdAt": {
+    "$date": "2025-05-18T19:41:39.770Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-18T19:41:39.770Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682a38297412672e10e7d178"
+  },
+  "nombre": "15 años",
+  "descripcion": "Fiesta de 15 años de Nicolle",
+  "fecha": {
+    "$date": "2025-07-10T00:00:00.000Z"
+  },
+  "servicios": [
+    {
+      "$oid": "68273ca7260f755e33080ef7"
+    },
+    {
+      "$oid": "68273ca7260f755e33080ef4"
+    }
+  ],
+  "hotel": {
+    "$oid": "6827555eecd8b472c8a0f8b8"
+  },
+  "status": "ACTIVO",
+  "createdAt": {
+    "$date": "2025-05-18T19:42:33.577Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-18T19:42:33.577Z"
+  }
+}]
